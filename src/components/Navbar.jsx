@@ -3,6 +3,12 @@ import logo from '../assets/images/logo.png';
 
 
 const Navbar = () => {
+
+  const linkClass = ({ isActive }) => 
+    isActive ? 
+    'text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2' : 
+    'text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2';
+  
   return (
     <nav className="bg-indigo-700 border-b border-indigo-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -22,15 +28,15 @@ const Navbar = () => {
               <div className="flex space-x-2">
                 <NavLink
                   to="/"
-                  className="text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  className = { linkClass }
                   >Home</NavLink>
                 <NavLink
                   to="/jobs"
-                  className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  className = { linkClass }
                   >Jobs</NavLink>
                 <NavLink
                   to="/add-job"
-                  className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  className= { linkClass }
                   >Add Job</NavLink>
               </div>
             </div>
